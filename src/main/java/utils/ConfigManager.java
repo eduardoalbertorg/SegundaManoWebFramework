@@ -5,11 +5,20 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfigReader {
+public class ConfigManager {
     private Properties properties;
     
-    public ConfigReader() {
+    public ConfigManager() {
         this.properties = loadProperties();
+    }
+
+    /**
+     * Method to set the desired property
+     * @param key
+     * @param value
+     */
+    public void setProperty(String key, String value) {
+        System.setProperty(key, value);
     }
 
     public Properties loadProperties() {
